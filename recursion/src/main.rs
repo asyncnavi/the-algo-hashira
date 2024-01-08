@@ -1,89 +1,13 @@
-// Tail recursion 
+mod taylor_series;
+mod fibonacci_series;
 
-fn print_reverse(n : i32) {
-  if n > 0 {
-      println!("{n}");
-      print_reverse(n -1);
-  } 
-}
-
-
-// Head recursion 
-
-fn print(n : i32) {
-    if n > 0 {
-        print(n-1);
-        println!("{n}");
-    }
-}
-
-// Tree recursion
-
-
-fn print_tree(n : i32) {
-    if n > 0 {
-        println!("{n}");
-        print_tree( n-1);
-        print_tree( n-1);
-    }
-}
-
-
-// Indrect Recursion 
-
-
-fn func_a(n : i32) {
-    if n > 0 {
-        println!("{n}");
-        func_b(n -1);
-    }
-}
-
-fn func_b(n : i32) {
-    if n > 1 {
-        println!("{n}");
-        func_a(n/2);
-    }
-}
-//
-
-fn sum(n : i64) -> i64 {
-    
-    if n == 0 {
-       return 0;    
-    } else {
-        sum(n-1) * n
-    }
-}
-
-fn factorial(n : i64) -> i64  {
-
-    if n == 0 || n == 1 {
-        return 1;
-    } else {
-         return factorial(n - 1) * n;
-    }
-}
-
-
-fn power(x : i64, n : i64) {
-     if n == 0 {
-         return 1;
-     } else {
-         return power(x, n-1) * x;
-     } 
-}
-
+use taylor_series::taylor_series::{sum ,sum_in_linear_time};
 fn main() {
-    println!("-----Tail recursion-------");
-    print_reverse(3);
-    println!("-----Head recursion-------");
-    print(3);
-    println!("----- Tree recursion -------");
-    print_tree(3);
-    println!("----- Indirect recursion -------");
-    func_a(20);
-    println!("----- Factorial -------");
-    let mut fac = factorial(5);
-    println!("{fac}");
+
+    println!("################# TAYLOR SERIES");
+    let sum_of_series = unsafe { sum(2, 10) };
+    let sum_of_series_l = unsafe { sum_in_linear_time(2, 10) };
+    let fibo = fibonacci_series::fibonacci_series::sum(6);
+    println!("{sum_of_series}, {sum_of_series_l}, {fibo}");
+
 }
