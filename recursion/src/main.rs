@@ -61,8 +61,17 @@ fn factorial(n : i64) -> i64  {
     if n == 0 || n == 1 {
         return 1;
     } else {
-        return factorial(n - 1) * n;
+         return factorial(n - 1) * n;
     }
+}
+
+
+fn power(x : i64, n : i64) {
+     if n == 0 {
+         return 1;
+     } else {
+         return power(x, n-1) * x;
+     } 
 }
 
 fn main() {
