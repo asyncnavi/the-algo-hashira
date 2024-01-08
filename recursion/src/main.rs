@@ -56,6 +56,14 @@ fn sum(n : i64) -> i64 {
     }
 }
 
+fn factorial(n : i64) -> i64  {
+
+    if n == 0 || n == 1 {
+        return 1;
+    } else {
+        return factorial(n - 1) * n;
+    }
+}
 
 fn main() {
     println!("-----Tail recursion-------");
@@ -66,4 +74,7 @@ fn main() {
     print_tree(3);
     println!("----- Indirect recursion -------");
     func_a(20);
+    println!("----- Factorial -------");
+    let mut fac = factorial(5);
+    println!("{fac}");
 }
