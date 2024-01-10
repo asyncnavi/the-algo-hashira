@@ -1,5 +1,6 @@
 mod taylor_series;
 mod fibonacci_series;
+mod toh;
 
 use taylor_series::taylor_series::{sum ,sum_in_linear_time};
 fn main() {
