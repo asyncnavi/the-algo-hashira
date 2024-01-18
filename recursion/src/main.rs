@@ -1,14 +1,11 @@
 mod taylor_series;
 mod fibonacci_series;
 mod toh;
+mod ncr;
 
-use taylor_series::taylor_series::{sum ,sum_in_linear_time};
+use toh::toh::tower_of_hanoi;
 fn main() {
 
     println!("################# TAYLOR SERIES");
-    let sum_of_series = unsafe { sum(2, 10) };
-    let sum_of_series_l = unsafe { sum_in_linear_time(2, 10) };
-    let fibo = fibonacci_series::fibonacci_series::sum(6);
-    println!("{sum_of_series}, {sum_of_series_l}, {fibo}");
-
+    tower_of_hanoi(3,'A','B', 'C');
 }
