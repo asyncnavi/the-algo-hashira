@@ -36,4 +36,17 @@ pub mod operation {
         }
     }
 
+    pub fn rev_with_copy<T: Copy>(arr: &mut [T]) {
+        let mut help_arr: Vec<T> = Vec::with_capacity(arr.len());
+
+        for i in (0..arr.len()).rev() {
+            help_arr.push(arr[i]);
+        }
+
+        for i in 0..arr.len() {
+            arr[i] = help_arr[i];
+        }
+    }
+
+
 }
