@@ -48,5 +48,18 @@ pub mod operation {
         }
     }
 
+    pub fn is_sorted(arr :  &[isize]) -> bool {
+        let mut check = false;
+        for i in 0..arr.len() - 1 {
+            if arr[i] < arr[i+1] {
+                check = true;
+            } else {
+                check = false;
+            }
+        }
+
+        check
+    }
 
 }
+
