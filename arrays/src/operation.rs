@@ -1,6 +1,6 @@
 pub mod operation {
-    use std::mem::swap;
 
+    /// Sum of all the items in array
     pub fn sum(arr : &[isize]) -> isize {
         let mut sum = 0;
         for i in  0..arr.len() {
@@ -8,7 +8,7 @@ pub mod operation {
         }
         sum
     }
-
+    /// Finding maximum values in array
     pub fn max(arr : &[isize]) -> isize {
        let mut max =  arr[0];
        for i in 1..arr.len() {
@@ -20,6 +20,7 @@ pub mod operation {
         max
     }
 
+    /// Average of an array ( sum of items /  total items )
     pub fn avg(arr : &[isize]) -> isize {
         let mut total  = 0;
         for i in 0..arr.len() {
@@ -29,6 +30,7 @@ pub mod operation {
         total / arr.len() as isize
     }
 
+    /// Reverse using swap
     pub fn rev<T>(arr: &mut [T]) {
         let len = arr.len();
         let mid = len /2 ;
@@ -38,6 +40,7 @@ pub mod operation {
         }
     }
 
+    /// Reverse array by copying with help of new vec
     pub fn rev_with_copy<T: Copy>(arr: &mut [T]) {
         let mut help_arr: Vec<T> = Vec::with_capacity(arr.len());
 
@@ -50,6 +53,8 @@ pub mod operation {
         }
     }
 
+
+    /// Check if the array is sorted or not
     pub fn is_sorted(arr :  &[isize]) -> bool {
         for i in 0..arr.len() - 1 {
             if arr[i] > arr[i+1] {
@@ -60,8 +65,8 @@ pub mod operation {
         true
     }
 
-
-    pub fn shift_signs(arr : &mut [isize])  {
+    /// Re Arranges according the sign ( -, + )
+    pub fn re_arrange(arr : &mut [isize])  {
         let mut i = 0;
         let mut j = arr.len() - 1;
 
@@ -79,6 +84,7 @@ pub mod operation {
         }
     }
 
+    /// Merge two sorted arrays
     pub fn merge_sorted(a : &[isize], b : &[isize] ) -> Vec<isize>{
         // creating new arrays
         let new_len = a.len() + b.len();
@@ -112,6 +118,7 @@ pub mod operation {
         c
     }
 
+    /// Union of two sorted  arrays
     pub fn union_with_sort(a : &[isize], b : &[isize]) -> Vec<isize> {
         let new_len = a.len() + b.len();
         let mut c = Vec::with_capacity(new_len);
@@ -148,6 +155,7 @@ pub mod operation {
         c
     }
 
+    /// Union of two arrays
     pub fn union(a : &[isize], b : &[isize]) -> Vec<isize> {
         let new_len = a.len() + b.len();
         let mut c = Vec::with_capacity(new_len);
@@ -177,6 +185,21 @@ pub mod operation {
         c
     }
 
+    /// Intersect of two arrays
+    pub fn intersect(a : &[isize], b : &[isize]) -> Vec<isize> {
+        let new_len = a.len() + b.len();
+        let mut c = Vec::with_capacity(new_len);
+
+        for i in 0..a.len() {
+            for j in 0..b.len() {
+                if a[i] == b[j] {
+                    c.push(a[i]);
+                }
+            }
+        }
+        c
+    }
+    /// Intersect of two sorted arrays
     pub fn intersect_with_sort(a : &[isize], b : &[isize]) -> Vec<isize> {
         let new_len = a.len() + b.len();
         let mut c = Vec::with_capacity(new_len);
@@ -200,21 +223,7 @@ pub mod operation {
         }
         c
     }
-
-    pub fn intersect(a : &[isize], b : &[isize]) -> Vec<isize> {
-        let new_len = a.len() + b.len();
-        let mut c = Vec::with_capacity(new_len);
-
-        for i in 0..a.len() {
-            for j in 0..b.len() {
-                if a[i] == b[j] {
-                    c.push(a[i]);
-                }
-            }
-        }
-        c
-    }
-
+    /// Difference of two  arrays
     pub fn diff(a : &[isize], b : &[isize]) -> Vec<isize> {
         let new_len = a.len() + b.len();
         let mut c = Vec::with_capacity(new_len);
@@ -233,6 +242,7 @@ pub mod operation {
         }
         c
     }
+    /// Difference of two sorted arrays
 
     pub fn diff_with_sort(a : &[isize], b : &[isize]) -> Vec<isize> {
         let new_len = a.len() + b.len();
