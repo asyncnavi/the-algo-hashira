@@ -11,7 +11,7 @@ pub mod search {
 
     pub fn binary_search(arr : &[isize], key : isize) -> Option<isize> {
         let mut l = 0;
-        let mut h = arr.len() -1;
+        let mut h = arr.len() -1 ;
 
         let mut mid =( l + h )/2;
 

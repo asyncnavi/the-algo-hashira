@@ -1,4 +1,6 @@
 pub mod operation {
+    use std::mem::swap;
+
     pub fn sum(arr : &[isize]) -> isize {
         let mut sum = 0;
         for i in  0..arr.len() {
@@ -49,17 +51,32 @@ pub mod operation {
     }
 
     pub fn is_sorted(arr :  &[isize]) -> bool {
-        let mut check = false;
         for i in 0..arr.len() - 1 {
-            if arr[i] < arr[i+1] {
-                check = true;
-            } else {
-                check = false;
+            if arr[i] > arr[i+1] {
+                return false;
             }
         }
 
-        check
+        true
     }
 
+
+    pub fn shift_signs(arr : &mut [isize])  {
+        let mut i = 0;
+        let mut j = arr.len() - 1;
+
+        while i < j {
+            while arr[i] < 0 {
+                i += 1;
+            }
+            while arr[j] > 0 {
+                j -= 1;
+            }
+
+            if(i < j) {
+                arr.swap(i,j);
+            }
+        }
+    }
 }
 
