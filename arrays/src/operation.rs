@@ -188,13 +188,13 @@ pub mod operation {
 
 
         while i < m && j < n {
-            if (a[i] == b[j]) {
-                c.push(a[i]);
-                i += 1;
-                j += 1;
-            } else if a[i] < a[j] {
+            if(a[i] < b[j]) {
                 i+=1;
+            } else if a[i] > b[j] {
+                j+=1;
             } else {
+                c.push(a[i]);
+                i+=1;
                 j+=1;
             }
         }
