@@ -5,7 +5,10 @@ mod operation;
 
 
 fn main() {
-    let mut values: [isize;7] = [-9,6,4,-1,2,-3,1];
-    operation::operation::shift_signs(&mut values);
-    println!("{:?}", values);
+    let arr: [isize;6] = [1,2,3,4,5,6];
+    let s_arr : [isize;6] = [3,4,5,6,7,8];
+
+    let result = operation::operation::diff(&arr,&s_arr);
+
+    println!("{:?}", result);
 }

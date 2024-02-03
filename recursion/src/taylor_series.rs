@@ -14,7 +14,6 @@ pub mod taylor_series {
         }
 
     }
-    /// Horner's rule ( O(n) )
     pub unsafe fn sum_in_linear_time(x : isize, n : isize) -> f64 {
         static mut S : f64 = 1.0;
 
