@@ -6,9 +6,9 @@ mod set;
 mod find;
 
 fn main() {
-    let arr: [isize;11] = [6,7,8,9,11,12,15,16,17,18,19];
+    let arr: [isize;13] = [6,7,8,9,11,11,12,15,16,17,18,19,19,];
 
-    let result = find::multiple_missing_using_hash(&arr);
+    let result = find::duplicate(&arr);
 
     println!("{:?}", result);
 }
