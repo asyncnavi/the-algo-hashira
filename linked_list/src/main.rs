@@ -1,3 +1,14 @@
+
+pub fn factorial(n : isize) ->  isize {
+    return if n == 1 {
+        1
+    } else {
+        factorial(n - 1) * n    
+    }
+
+}
+
 fn main() {
-    println!("Hello, world!");
+    let fact = factorial(5);
+    println!("{fact}");
 }

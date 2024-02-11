@@ -5,10 +5,12 @@
       <sourceFolder url="file://$MODULE_DIR$/arrays/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/recursion/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/matrices/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/linked_list/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/recursion/target" />
       <excludeFolder url="file://$MODULE_DIR$/two_sum/target" />
       <excludeFolder url="file://$MODULE_DIR$/arrays/target" />
       <excludeFolder url="file://$MODULE_DIR$/matrices/target" />
+      <excludeFolder url="file://$MODULE_DIR$/linked_list/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
